@@ -1,0 +1,21 @@
+@use '../abstracts/helpers' as *;
+
+.text-preset-1-desktop {
+    @include text($color: $lime, $font-size: $fs-56px, $font-weight: $fw-700, $line-height: $lh-125);
+}
+
+.text-preset-1-mobile {
+    @include text($font-size: $fs-40px, $font-weight: $fw-700);
+}
+
+.text-preset-2-desktop {
+    @include text($font-size: $fs-24px, $font-weight: $fw-700, $line-height: $lh-125);
+}
+
+.text-preset-3-desktop {
+    @include text($font-size: $fs-18px, $font-weight: $fw-700, $line-height: $lh-125);
+}
+
+.text-preset-4-desktop {
+    @include text($font-size: $fs-16px, $font-weight: $fw-500, $line-height: $lh-150);
+}

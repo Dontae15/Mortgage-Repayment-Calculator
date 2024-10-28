@@ -1,0 +1,37 @@
+@use '../abstracts/helpers' as *;
+
+.display h2 {
+    color: $white;
+    text-align: center;
+}
+
+.display p {
+    color: $slate-300;
+    text-align: center;
+}
+
+.results-heading {
+    @include container($max-width: 424px, $margin: 0 auto);
+    @include flex($flex-direction: column, $align-items: flex-start, $justify-content: center, $gap: $spacing-200);
+}
+
+.results-heading p {
+    text-align: start;
+}
+
+.results-container {
+    @include container($max-width: 424px, $margin: 0 auto, $padding: $spacing-400, $border-radius: 8px);
+    @include flex($flex-direction: column, $align-items: flex-start, $justify-content: center, $gap: $spacing-400);
+    border-top: 4px solid $lime;
+    background: rgba(0, 0, 0, 0.25);
+    z-index: 1;
+}
+
+.monthly-results h4, .total-results h4,  .monthly-interest h4, .total-interest h4 {
+    color: $slate-300;
+}
+
+.monthly-results, .total-results, .monthly-interest, .total-interest {
+    @include container($max-width: 359px);
+    @include flex($flex-direction: column, $align-items: flex-start, $justify-content: center, $gap: $spacing-100);
+}

@@ -1,0 +1,144 @@
+@use '../abstracts/helpers' as *;
+
+.calculator-heading {
+    @include container($max-width: 464px, $margin: 0 auto);
+    @include flex($flex-direction: row, $align-items: center, $justify-content: space-between);
+}
+
+.calculator-heading a {
+    color: $slate-700;
+}
+
+#calculate-form {
+    @include container($max-width: 464px, $margin: 0 auto);
+    @include flex($flex-direction: column, $align-items: flex-start, $justify-content: center, $gap: $spacing-300);
+}
+
+.form-group {
+    @include container($max-width: 464px, $margin: 0 auto);
+    @include flex($flex-direction: column, $align-items: flex-start, $justify-content: center, $gap: $spacing-150);
+}
+
+.form-group-term {
+    @include container($max-width: 464px, $margin: 0 auto);
+    @include flex($flex-direction: row, $align-items: flex-start, $justify-content: center, $gap: $spacing-150);
+}
+
+.form-input {
+    @include container($max-width: 464px, $margin: 0 auto);
+    @include flex($flex-direction: row, $align-items: center, $justify-content: center);
+    position: relative;
+}
+
+.form-input-radio {
+    @include container($max-width: 464px, $padding: $spacing-150 $spacing-200, $margin: 0 auto, $border-radius: 4px);
+    @include flex($flex-direction: row, $align-items: center, $justify-content: flex-start);
+    border: 1px solid $slate-500;
+}
+
+input[type="radio"] {
+    appearance: none;
+    width: 22px;
+    height: 22px;
+    border: 1px solid $slate-700;
+    border-radius: 50%;
+    position: relative;
+    outline: none;
+    cursor: pointer;
+  }
+  
+  /* Custom checked style */
+  input[type="radio"]:checked {
+    border: 1px solid $lime; /* Outer border color when selected */
+    border-color: $lime; /* Outer border color when selected */
+    background-color: transparent; /* Background color inside the radio */
+  }
+  
+  input[type="radio"]:checked::before {
+    content: '';
+    width: 12px;
+    height: 12px; 
+    background-color: $lime; /* Inner dot color */
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the dot */
+  }
+
+input[type="number"] {
+    @include container($max-width: 464px, $padding: $spacing-150 $spacing-200, $border-radius: 8px);
+    height: 50px;
+    border: 1px solid $slate-500;
+}
+
+#mortgage-amount {
+    text-indent: 2.8rem;
+}
+
+input:focus {
+    border: none;
+    outline: 1px solid $slate-900;
+}
+
+span {
+    background-color: $slate-100;
+    position: absolute;
+}
+
+.span-small {
+    @include container($max-width: 12px, $padding: $spacing-150 $spacing-300, $border-radius: 0 4px 4px 0);
+    @include flex($flex-direction: row, $align-items: center, $justify-content: center);
+}
+
+.dollar {
+    left: 2px;
+    border-radius: 4px 0 0 4px;
+}
+
+.percent {
+    right: 2px;
+    border-radius: 0 4px 4px 0;
+}
+
+
+.span-large {
+    @include container($max-width: 48px, $padding: $spacing-150 $spacing-400);
+    @include flex($flex-direction: row, $align-items: center, $justify-content: center);
+    right: 2px;
+    border-radius: 0 4px 4px 0;
+}
+
+
+button {
+    @include button($padding: $spacing-200 $spacing-300, $border-radius: 999px);
+    @include flex($align-items: center, $justify-content: center);
+    border: none;
+}
+
+
+@media (max-width: 450px) {
+    .form-group-term {
+        @include container($max-width: 464px, $margin: 0 auto);
+        @include flex($flex-direction: column, $align-items: center, $justify-content: center, $gap: $spacing-150);
+    }
+
+    .calculator-heading {
+        @include container($max-width: 464px, $margin: 0 auto);
+        @include flex($flex-direction: column, $align-items: flex-start, $justify-content: center, $gap: $spacing-150);
+    }
+
+    .calculator-heading h2 {
+        font-size: 24px;
+    }
+
+    .calculator-heading a {
+        font-size: 16px;
+    }
+
+    button {
+        @include button($padding: $spacing-150 $spacing-300, $border-radius: 999px);
+        @include flex($align-items: center, $justify-content: center);
+    }
+    
+}

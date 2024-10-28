@@ -2,12 +2,66 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>Mortgage Repayment Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
+     <div class="main-content">
+      <div class="calculator">
+        <div class="calculator-heading">
+          <h2 class="text-preset-2-desktop">Mortgage Calculator</h2>
+          <a class='text-preset-4-desktop' href="">Clear All</a>
+        </div>
+        <form id="calculate-form">
+          <div class="form-group">
+            <p>Mortgage Amount</p>
+            <div class="form-input">
+              <span class="span-small dollar">$</span>
+              <input type="number" id="mortgage-amount"/>
+            </div>
+          </div>
+          <div class="form-group-term">
+            <div class="mortgage-term">
+              <p>Mortgage Term</p>
+              <div class="form-input">
+                <input type="number" id="mortgage-term"/>
+                <span class="span-large">years</span>
+              </div>
+            </div>
+            <div class="interest-rate">
+              <p>Interest Rate</p>
+              <div class="form-input">
+                <input type="number" id="interest-rate"/>
+                <span class="span-small percent">%</span>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <p>Mortgage Type</p>
+            <div class="form-input-radio">
+              <input type="radio" name="payment-option" id="repayment"/>
+              <label class='text-preset-3-desktop' for="payment-option">Repayment</label>
+            </div>
+            <div class="form-input-radio">
+              <input type="radio" name="payment-option" id="interest"/>
+              <label class='text-preset-3-desktop' for="payment-option">Interest Only</label>
+            </div>
+          </div>
+        </form>
+        <button type='submit' id="calculate-btn">
+          <img src="public/assets/images/icon-calculator.svg">
+          <p class="text-preset-3-desktop">Calculate Repayments</p>
+        </button>
+      </div>
+      <div class="display">
+        <img src="public/assets/images/illustration-empty.svg">
+        <h2 class="text-preset-2-desktop">Results shown here</h2>
+        <p class="text-preset-4-desktop">Complete the form and click “calculate repayments” to see what your monthly repayments would be.</p>
+      </div>
+     </div>
+    <script type="module" src="src/js/main.js"></script>
   </body>
 </html>
